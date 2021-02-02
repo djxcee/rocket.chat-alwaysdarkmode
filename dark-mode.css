@@ -1,0 +1,787 @@
+/******************************************
+ *************General Settings*************
+ ******************************************/
+
+:root {
+	--primary-font-color: #444;
+	--info-font-color: #a0a0a0;
+	--color-darker: #272c33;
+}
+
+/* Reset global font color so that it's changable more easily */
+.color-primary-font-color, textarea {
+	color: var(--primary-font-color);
+}
+
+.color-info-font-color {
+	color: var(--info-font-color);
+}
+
+input, select, textarea {
+	color: var(--input-text-color);
+}
+
+.error-color {
+	color: var(--rc-color-error);
+}
+
+.js-button[aria-label="Toggle Dark Mode"] {
+	transition: filter 150ms;
+}
+
+.rcx-icon--name-darkmode {
+	height: .9em;
+}
+
+@media (min-width: 1372px) {
+	.sidebar__toolbar-button {
+		margin: 0 3px;
+	}
+}
+
+@keyframes highlight {
+	from {
+		background-color: hsl(216, 92%, 54%);
+	}
+}
+
+/******************************************
+ ************Transition Effect*************
+ ******************************************/
+input,
+textarea,
+select,
+.color-primary-font-color,
+.color-info-font-color,
+.background-info-font-color,
+.background-transparent-darker-before::before,
+.messages-box .message .body, /* override for opacity transition */
+.rc-header__name,
+.rc-header__wrap,
+.message .reactions>li,
+.message .title .is-bot,
+.message .title .role-tag,
+.message.new-day::before,
+.code-colors,
+.hljs-selector-id,
+.hljs-selector-tag,
+.hljs-attribute,
+.hljs-keyword,
+.hljs-title,
+.hljs-doctag,
+.hljs-string,
+.hljs-type,
+.hljs-literal,
+.hljs-number,
+.hljs-tag,
+.hljs-name,
+.hljs-attr,
+.hljs-template-variable,
+.hljs-variable,
+.rc-message-box__container,
+.messages-container .footer,
+.content-background-color,
+.message.new-day::after,
+.message .reactions>li,
+.border-component-color,
+.contextual-bar__header,
+.contextual-bar__content,
+.sidebar__footer {
+	transition: opacity 300ms linear, color 150ms, background-color 150ms, border-color 150ms;
+}
+
+
+
+/******************************************
+ *************Dark Mode Settings***********
+ ******************************************/
+body {
+
+	/****************************** Custom Variables ******************************/
+	--primary-font-color: var(--color-gray-lightest);
+	--info-font-color: var(--color-gray-light);
+	--message-box-background: hsla(0, 0, 100%, 0.1);
+
+	--button-outline-color: var(--color-gray-medium);
+	--button-close-color: var(--color-gray-medium);
+
+
+	/********************** Overridden Rocket.Chat Variables **********************/
+
+	/* General Colors */
+	--rc-color-alert-message-warning-background: hsl(352, 83%, 20%);
+	--rc-color-primary: var(--color-gray-lightest);
+	--rc-color-primary-lightest: var(--color-dark-medium);
+
+	/* Forms - Button */
+	--button-disabled-background: var(--color-dark-70);
+	--button-disabled-text-color: var(--color-dark-80);
+
+	/* Forms - Input */
+	--input-text-color: var(--color-gray-lightest);
+	--input-icon-color: var(--color-gray-lightest);
+
+	/* Forms - popup list */
+	--popup-list-background: var(--color-dark);
+	--popup-list-background-hover: var(--color-darkest);
+	--popup-list-selected-background: var(--color-dark);
+	--popup-list-name-color: var(--color-white);
+
+	/* Forms - tags */
+	--tags-text-color: var(--color-white);
+	--tags-background: var(--color-blue);
+
+	/* Sidebar */
+	--sidebar-background: var(--color-dark);
+
+	/* Chip */
+	--chip-background: var(--color-blue);
+
+	/* Mention link */
+	--mention-link-background: var(--color-dark-medium);
+	--mention-link-text-color: var(--color-light-blue);
+	--mention-link-me-background: var(--alerts-background);
+	--mention-link-me-text-color: var(--color-white);
+	--mention-link-group-background: var(--alerts-background);
+	--mention-link-group-text-color: var(--color-white);
+
+	/* Message box */
+	--message-box-user-typing-color: var(--color-gray-lightest);
+	--message-box-user-typing-user-color: var(--color-gray-lightest);
+
+	/* Header */
+	--header-title-username-color-darker: var(--color-gray-lightest);
+	--header-background-color: var(--color-darkest);
+
+	/* Popover */
+	--popover-background: var(--color-dark);
+	--popover-title-color: var(--color-white);
+	--popover-item-color: var(--color-white);
+
+	/* Tooltip */
+	--tooltip-background: var(--color-darkest);
+	--tooltip-text-color: var(--color-white);
+
+	/* alert */
+	--alerts-background: #1d73f5;
+	--alerts-color: var(--color-white);
+
+	--message-box-editing-color: var(--rc-color-alert-message-warning-background);
+	--rc-color-alert: var(--color-dark-red);
+}
+
+
+
+/******************************************
+ *********Manual Dark Theme Overrides******
+ ******************************************/
+
+
+/***************Main Chat*****************/
+
+body .main-content a {
+	color: var(--color-light-blue);
+}
+
+body .mention-link--group {
+	color: var(--mention-link-group-text-color) !important;
+}
+
+body .mention-link--me {
+	color: var(--mention-link-me-text-color) !important;
+}
+
+body select {
+	background-color: var(--color-dark);
+}
+
+body select option {
+	color: var(--color-white);
+}
+
+body .sidebar-item > a {
+	color: inherit;
+}
+
+body .rc-switch__text {
+	color: var(--color-white);
+}
+
+body .rc-switch-double {
+	color: var(--color-white);
+}
+
+body .rc-switch__button {
+	background-color: var(--color-dark);
+}
+
+body .error-border {
+	border-color: var(--color-dark-red);
+}
+
+body .background-component-color {
+	background-color: var(--color-dark-blue);
+}
+
+body .upload-progress-progress {
+	background-color: var(--color-blue);
+}
+
+body .container-bars .color-primary-action-color {
+	color: var(--color-white);
+}
+
+body .burger i {
+	background-color: var(--color-white);
+}
+
+body .rc-member-list__user.active,
+body .rc-member-list__user:hover {
+	background-color: var(--color-darkest);
+}
+
+body .rc-user-info-details {
+	background-color: var(--color-dark-medium);
+}
+
+body p.rc-user-info-details__info {
+	color: var(--color-white);
+}
+
+body .messages-container .footer,
+body .content-background-color {
+	background-color: var(--header-background-color);
+}
+
+body .message {
+    background-color: var(--color-darkest);
+}
+
+body .message.new-day::after,
+body .message .reactions>li,
+body .border-component-color {
+	border-color: var(--rc-color-primary-lightest);
+}
+
+body .message .reactions>li,
+body .message .title .is-bot,
+body .message .title .role-tag,
+body .message.new-day::before {
+	background-color: var(--rc-color-primary-dark);
+}
+
+body .message.active,
+body .message:hover {
+    background-color: var(--color-darker);
+}
+
+body .message.editing {
+	background-color: var(--color-dark-blue);
+}
+
+body .message.first-unread .body:after {
+	background-color: var(--header-background-color);
+}
+
+body .rc-message-box__container {
+	background-color: var(--message-box-background);
+}
+
+body .rc-old .rc-message-box .reply-preview {
+	background-color: var(--color-dark);
+}
+
+body .message-actions,
+body .rc-member-list__counter {
+	color: var(--color-gray-light);
+	background-color: var(--color-darkest);
+	border-color: var(--color-dark);
+}
+
+body .message-actions__button:hover,
+body .message-actions__menu:hover {
+	background-color: var(--color-dark);
+}
+
+body .message .body > table thead tr {
+    background-color: var(--color-darkest);
+}
+
+body .message .body > table tr {
+    background-color: var(--color-dark-medium);
+}
+
+body .message .body > table tr:nth-child(2n) {
+    background-color: var(--color-dark);
+}
+
+body .background-transparent-darker-before::before {
+	background-color: var(--color-dark-medium);
+}
+
+/*body .background-info-font-color {
+	background-color: var(--color-dark-medium);
+}*/
+
+body .rc-modal,
+body .rc-modal__footer {
+	background: var(--color-darkest);
+}
+
+body .rc-modal__content,
+body .rc-modal__header {
+	color: var(--color-white);
+}
+
+body .rc-button--outline {
+	border-color: var(--button-outline-color);
+	color: var(--button-outline-color);
+}
+
+body .rc-button--outline.js-close,
+body .rc-button--nude.js-close {
+	border-color: var(--button-close-color);
+	color: var(--button-close-color);
+}
+
+body .rc-button--cancel,
+body .rc-button--danger {
+	background-color: var(--button-cancel-color);
+	border-color: var(--button-cancel-color);
+	color: var(--button-primary-text-color);
+}
+
+body .contextual-bar {
+	background-color: var(--color-dark);
+	border-left: 2px solid var(--color-dark-medium);
+}
+
+body .contextual-bar__header {
+	background-color: var(--color-dark);
+	border-bottom: 1px solid var(--color-dark-medium);
+}
+
+body .contextual-bar__content {
+	background-color: var(--color-dark);
+}
+
+body .rc-member-list__counter {
+	background-color: var(--color-dark);
+}
+
+/* Targets unread message indicator in threads panel. */
+body button.rcx-contextual-message__follow + div.rcx-box--full {
+    background-color: #1d74f5 !important;
+}
+
+/***** Chat file list *****/
+
+body .attachments__item:hover, .attachments__item:active {
+	background-color: var(--color-darkest);
+}
+
+body .attachments__content:hover, .attachments__content:active {
+	color: var(--primary-font-color);
+}
+
+body .attachments__name {
+	color: var(--color-blue);
+}
+
+body .attachments__name:hover, .attachments__name:active {
+	color: var(--color-light-blue);
+}
+
+body .rc-popover__content {
+	background-color: var(--popover-background);
+	box-shadow: 0px 0px 2px var(--color-dark-20);
+}
+
+body .emoji-picker .filter-item.active {
+	border-color: var(--color-light-blue);
+}
+
+body .rc-header--room {
+	border-bottom: 2px solid var(--color-dark-medium);
+}
+
+body .room-leader:hover {
+	background-color: var(--color-darkest);
+}
+
+body .chat-now {
+	color: var(--color-white);
+}
+
+body .message-popup-title {
+	background-color: var(--color-dark);
+}
+
+/**************Code Highlights*****************/
+
+body .code-colors,
+body .rc-old code.inline {
+	background: var(--color-dark-100);
+	color: var(--color-gray-light);
+}
+
+body .hljs-selector-id,
+body .hljs-keyword {
+	color: var(--color-light-blue);
+}
+
+body .hljs-title {
+	color: var(--color-gray-light);
+}
+
+body .hljs-literal,
+body .hljs-number,
+body .hljs-attr,
+body .hljs-template-variable,
+body .hljs-variable {
+	color: var(--color-dark-green);
+}
+
+body .hljs-tag,
+body .hljs-name {
+	color: var(--color-light-blue);
+}
+
+body .hljs-selector-tag,
+body .hljs-subst {
+	color: var(--color-green);
+}
+
+body .hljs-doctag,
+body .hljs-string {
+	color: var(--color-red);
+}
+
+body .hljs-attribute,
+body .hljs-type,
+body .hljs-number {
+	color: var(--color-orange);
+}
+
+body .hljs-addition {
+  background-color: #1e3a21;
+}
+body .hljs-deletion {
+  background-color: #472d2e;
+}
+
+/***** My Account *****/
+
+body .rc-form-legend,
+body .rc-form-label {
+	color: var(--primary-font-color);
+}
+
+body .js-logout {
+	color: var(--primary-font-color);
+	border-color: var(--primary-font-color);
+}
+
+/**************Admin Panel******************/
+
+.page-list a:not(.rc-button), .page-settings a:not(.rc-button) {
+	color: var(--primary-font-color);
+}
+
+body .sidebar-flex__header {
+	background-color: var(--color-dark);
+}
+
+body .sidebar-light {
+	background-color: var(--color-dark);
+}
+
+body .rcx-accordion-item__title,
+body .rcx-label__text,
+body .rcx-field__label{
+	color: var(--color-white);
+}
+
+body .sidebar-flex__search .rc-input__element {
+	color: var(--color-dark);
+}
+
+body .rcx-input-box__wrapper {
+	background-color: var(--color-dark);
+}
+
+body .rcx-box * .rcx-input-box {
+	background-color: var(--color-dark);
+}
+
+body .rcx-table__cell {
+	color: var(--color-gray);
+	background-color: var(--color-dark);
+}
+
+body  .rcx-table__cell--align-end {
+	color: var(--color-gray);
+	background-color: var(--color-gray);
+}
+
+body .rc-input__element:disabled{
+	background-color: var(--color-gray);
+}
+
+body .admin-table-row {
+	background-color: hsl(219, 16%, 25%);
+}
+
+body .sidebar-light .sidebar-item {
+	color: inherit;
+}
+
+body .admin-table-row:nth-child(even) {
+	background-color: hsl(219, 15%, 33%);
+}
+
+body .permissions-manager .permission-grid .id-styler {
+	color: var(--info-font-color);
+}
+
+body .rcx-accordion-item__bar:hover {
+	background-color: var(--color-dark-30);
+}
+
+body .rcx-box--text-style-h1,
+body .rcx-subtitle,
+body .rcx-box--text-color-default,
+body .rcx-box--text-color-info {
+	color: var(--color-gray-lightest);
+}
+
+body .rcx-table__cell {
+	color: var(--color-gray-lightest);
+}
+
+body .rcx-button--primary:disabled {
+	color: var(--color-gray);
+}
+
+body .permissions-manager .permission-grid .role-name {
+	background: var(--color-dark);
+}
+
+body .rc-apps-marketplace .rc-table-content tbody .rc-table-tr:not(.table-no-click):not(.table-no-pointer):hover,
+body .rc-apps-section .rc-table-content tbody .rc-table-tr:not(.table-no-click):not(.table-no-pointer):hover {
+	background-color: var(--color-dark);
+}
+
+body .rc-apps-marketplace .rc-table-content .rc-table-info .rc-apps-categories .rc-apps-category,
+body .rc-apps-section .rc-table-content .rc-table-info .rc-apps-categories .rc-apps-category {
+	color: var(--primary-font-color);
+	background-color: var(--color-dark-medium);
+}
+
+/*body .rcx-box * .rcx-input-box,*/
+body .rcx-box * .rcx-select {
+	/*color: var(--color-dark-medium);*/
+	background-color: var(--color-white);
+}
+
+body .mail-messages__instructions {
+	background-color: var(--color-dark);
+}
+
+body .rcx-tag--secondary {
+	background-color: var(--color-dark-medium);
+}
+
+body .rcx-table__cell--align-end {
+    color: var(--info-font-color) !important;
+	background-color: var(--color-dark-medium) !important;
+}
+
+body .main-content .rcx-box {
+    color: var(--info-font-color) !important;
+	background-color: var(--color-dark) !important;
+}
+
+body .rcx-modal__backdrop {
+	background-color: transparent !important;
+}
+
+body .rcx-table__cell--align-start {
+    color: var(--info-font-color) !important;
+	background-color: var(--color-dark-medium) !important;
+}
+
+body .main-content .rcx-button {
+	background-color: var(--color-dark-medium)
+}
+
+body .rcx-button--primary {
+	color: var(--info-font-color);
+	background-color: #095ad2
+}
+
+body  .rcx-field__description code {
+	background-color: var(--color-dark);
+}
+
+body .table-fake-th {
+	color: var(--info-font-color);
+}
+
+body .rc-input__element {
+	background-color: var(--color-dark-medium);
+	color: var(--info-font-color) !important;
+}
+
+body .rcx-check-box.is-focused,
+body .rcx-check-box__input:checked+.rcx-check-box__fake,
+body .rcx-check-box.is-focused,
+body .rcx-check-box__input:indeterminate+.rcx-check-box__fake,
+body .rcx-check-box__input:checked:focus+.rcx-check-box__fake,
+body .rcx-check-box__input:indeterminate:focus+.rcx-check-box__fake,
+body .rcx-radio-button.is-focused
+body .rcx-radio-button__input:checked+.rcx-radio-button__fake,
+body .rcx-radio-button__input:checked:focus+.rcx-radio-button__fake,
+body .rcx-toggle-switch.is-focused
+body .rcx-toggle-switch__input:checked+.rcx-toggle-switch__fake,
+body .rcx-toggle-switch__input:checked:focus+.rcx-toggle-switch__fake {
+	background-color: #1d74f5 !important;
+}
+
+body .CodeMirror {
+	background-color: var(--color-gray-light);
+}
+
+body .CodeMirror-gutter {
+	background-color: var(--color-dark);
+}
+
+body .setting-action {
+	border: var(--button-border-width) solid var(--info-font-color);
+	color: var(--info-font-color);
+}
+
+
+/**************Login Page******************/
+
+body main#rocket-chat {
+	background-color: var(--color-dark);
+}
+
+body section.full-page.color-tertiary-font-color {
+	background-color: var(--color-dark);
+}
+
+body .rc-button.rc-button--nude.forgot-password,
+body .rc-button.rc-button--nude.back-to-login,
+body .rc-button.rc-button--nude.register,
+body .rc-button.rc-button--nude i.icon-cancel,
+body .register-link-replacement {
+	color: var(--color-white);
+}
+
+body #login-card {
+	background-color: var(--color-darkest);
+}
+
+
+/**************Scrollbars******************/
+body .main-content *::-webkit-scrollbar {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+body .main-content  *::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+body .main-content  *::-webkit-scrollbar-corner {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+/***** Poll App *****/
+body .rc-modal-wrapper > dialog > div {
+	background-color: var(--header-background-color);
+}
+
+body .rcx-box--text-style-h1,
+body .rcx-subtitle,
+body .rcx-box--text-color-default,
+body .rcx-box--text-color-info {
+    color: var(--color-dark);
+}
+
+/* Style the browser scroll bars to avoid visually clashing with the rest of Rocket.Chat in dark mode. */
+
+body * {
+	scrollbar-color: #777 transparent;
+}
+
+body *::-webkit-scrollbar {
+	width: .75rem;
+}
+
+body *::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+body *::-webkit-scrollbar-thumb {
+	background-color: #777;
+}
+
+/* Firefox does the dimming on hover automatically. We emulate it for Webkit-based browsers. */
+body *::-webkit-scrollbar-thumb:hover {
+	background-color: #666;
+}
+
+body *::-webkit-scrollbar-thumb:active {
+	background-color: #444;
+}
+
+/***** Changes for 3.9.1 *****/
+
+aside.sidebar--main .rcx-sidebar-topbar .rcx-button--small-square {
+    width: 1.35rem;
+}
+
+body .main-content .rcx-box {
+    color: var(--info-font-color) !important;
+	background-color: var(--color-darkest) !important;
+}
+
+body div[class*="user-card"] {
+    color: var(--info-font-color) !important;
+    background-color: var(--color-dark) !important;
+}
+
+body .rcx-box {
+    color: var(--info-font-color) !important;
+    background-color: var(--color-dark-medium);
+}
+
+body .rcx-status-bullet--online {
+  background: #2de0a5 !important;
+}
+
+body .rcx-box--full {
+    background-color: var(--color-dark);
+}
+
+body .rc-box.rcx-box--full.rcx-sidebar-item__title,
+body .rc-box.rcx-box--full.rcx-sidebar-item__subtitle,
+body .rc-box.rcx-box--full.rcx-sidebar-item__time {
+	color: var(--sidebar-item-text-color);
+}
+
+body .rcx-sidebar-topbar button.rcx-button-group__item .rcx-icon,
+body .rcx-box.rcx-box--full.rcx-icon--name-hashtag,
+body .rcx-box.rcx-box--full.rcx-sidebar-title {
+	color: var(--sidebar-item-text-color) !important;
+}
+
+body .rcx-sidebar-item--highlighted {
+	color: #fff !important;
+}
+
+body .rcx-sidebar-item__container span.rcx-box.rcx-box--full.rcx-badge {
+	background-color: var(--rc-color-alert);
+}
